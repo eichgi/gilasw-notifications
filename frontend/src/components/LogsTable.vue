@@ -16,7 +16,7 @@ const props = defineProps(['logs']);
 
     <DataTable id="table" :value="logs" tableStyle="min-width: 50rem">
       <Column field="time" header="Time"></Column>
-      <Column field="message" header="Message"></Column>
+      <Column field="msg" header="Message"></Column>
     </DataTable>
   </WelcomeItem>
 

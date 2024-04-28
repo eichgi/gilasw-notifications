@@ -59,7 +59,6 @@ export const readLogsFile = async (): Promise<LogDto[]> => {
       .map((line: object) => {
         return plainToInstance(LogDto, line, {excludeExtraneousValues: true});
       });
-
     return logs;
   } catch (error) {
     console.log("Logging an error when reading logs, lol", error);

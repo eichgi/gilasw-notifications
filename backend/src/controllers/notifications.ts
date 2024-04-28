@@ -23,7 +23,7 @@ export const getNotifications = async (req: Response, res: Response) => {
   try {
     const logs: LogDto[] = await readLogsFile();
 
-    res.json({message: "logs...", logs});
+    return res.json({message: "logs...", logs});
   } catch (error) {
     res.status(500).json({message: "An error has occurred."});
   }

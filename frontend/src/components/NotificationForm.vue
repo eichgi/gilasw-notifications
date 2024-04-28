@@ -3,7 +3,7 @@ import {ref} from "vue";
 import Button from "primevue/button";
 import MultiSelect from 'primevue/multiselect';
 import InputText from 'primevue/inputtext';
-import axios from "axios";
+import {httpClient} from "@/http/client";
 
 defineProps<{
   msg: string
@@ -25,7 +25,7 @@ const sendNotification = async () => {
 
   try {
     loading.value = true;
-    const response = await axios.post('http://localhost:3000/notifications/new', {
+    const response = await httpClient.post('notifications/new', {
       text: text.value,
       categories: categories.value
     });
